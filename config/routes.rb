@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   resources :users
-  get 'users/index'
+  get '/signup', to: 'users#new'
+  root to: 'users#show'
 
   #resources :users
   #get 'welcome/show'
 
+  resources :sessions
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'users#show'
+  post '/logout', to: 'sessions#logout'
 
 
-  root 'users#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

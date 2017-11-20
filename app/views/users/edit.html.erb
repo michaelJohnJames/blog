@@ -1,18 +1,7 @@
-<h1> Edit user </h1>
+<h1> Edit account </h1>
 
 <%= form_with(model: @user, local: true) do |f| %>
-<% if @user.errors.any? %>
-<div id="error">
-<h4><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h4>
-<ul>
-  <% @user.errors.full_messages.each do |error| %>
-  <li><%= error %></li>
 
-</ul>
-</div>
-
-  <% end %>
-  <% end %>
 
   <p>
     <%= f.label :username %><br>
@@ -25,12 +14,12 @@
   </p>
 
   <p>
-    <%= f.label :f_name %><br>
+    <%= f.label :first_name %><br>
     <%= f.text_field :f_name %>
   </p>
 
   <p>
-    <%= f.label :l_name %><br>
+    <%= f.label :last_name %><br>
     <%= f.text_field :l_name %>
   </p>
 

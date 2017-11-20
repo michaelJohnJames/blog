@@ -32,10 +32,16 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:id])
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to user_path(@user), notice: "Great success!"
     else
-      render 'edit'
+      render :edit
     end
+  end
+
+  def destroy
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
 
   private

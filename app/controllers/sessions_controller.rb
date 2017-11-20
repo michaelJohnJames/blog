@@ -9,7 +9,7 @@ before_action :authenticate, only: [:show]
   @user = User.find_by_username(params[:username])
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
-    redirect_to '/', notice: 'You are logged in!'
+    redirect_to '/'
   else
     redirect_to '/signin', notice: 'Username unknown or password.'
   end

@@ -1,10 +1,20 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    @user = User.find_by_id(params[:id])
+  end
+
   def show
     @user = User.find(params[:id])
   end
 
   def new
+    @user = User.new
+  end
+
+  def edit
+    @user = User.find_by_id(params[:id])
   end
 
   def create
@@ -12,7 +22,16 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      redirect_to '/users/new'
+      render '/users/new'
+    end
+  end
+
+  def update
+    @user = User.find_by_id(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 

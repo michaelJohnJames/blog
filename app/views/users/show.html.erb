@@ -3,6 +3,27 @@
 
 <h2> Make a new post</h2>
 
+<%= form_with(model: @post, local: true) do |f| %>
+<%= hidden_field_tag :user_id, @user.id %>
+
+  <%= f.label :title %><br>
+  <%= f.text_field :title%> <br>
+
+  <%= f.label :body %> <br>
+  <%= f.text_field :body %> <br>
+
+  <%= f.submit %><br>
+  <% end %>
+
+
+  <% @user.posts.each do |post| %>
+  <%= post.title %>
+  <%= post.body %>
+  <% end %>
+
+
+
+
 
 <%= link_to 'Edit your account', edit_user_path(@user) %>
 <%= link_to 'Delete account', @user, method: 'delete', data: { confirm: 'Are you sure you want to delete your account?' }, local: true  %>

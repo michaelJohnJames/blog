@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#logout'
 
 
+  resources :posts
+  post '/users/:id', to: 'posts#create'
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

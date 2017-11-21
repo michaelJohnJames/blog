@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :posts
   post '/users/:id', to: 'posts#create'
+  post '/', to: 'posts#create'
 
 
 

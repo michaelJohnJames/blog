@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   get '/:id', to: 'users#show'
 
 
-  resources :comments do
+  resources :comments
   #get '/comments/:post_id', to: 'comments#show'
-#  post '/comments/:user_id', to: 'users#show'
-end
+  post '/comments/show', to: 'comments#show'
+
 
 
 

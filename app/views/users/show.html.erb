@@ -30,11 +30,11 @@
   <%= post.body %><br>
   Post by <%= link_to "#{@user.username}", "/#{@user.id}" %>
 <br>
-  <%= link_to "Comment", "/posts/#{@post_id}" %>
-  <%= form_with(model: @comment, local: true) do |f| %>
+  <%= link_to "Comment", "/comments/show" %>
+  <%= form_with(model: Comment.new, local: true) do |f| %>
     <%= hidden_field_tag :user_id, @user.id %>
-    <%= f.hidden_field :comment_id %>
-    <%= f.hidden_field :post_id %>
+    
+    <%= hidden_field_tag :post_id, post.id %>
 
     <%= f.text_area :body %>
     <%= f.submit :Comment %>

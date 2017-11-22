@@ -1,24 +1,24 @@
 class CommentsController < ApplicationController
   before_action :get_post, :authenticate, :current_user
 
-
+def index
+  @comments = Comment.all
+end
 
   def create
-    @post = @user.posts.find_by_id(:post_id)
-    @comment = @user.posts.comments.create(comment_params)
-    @comment.user_id = current_user_id
-    @comment.posts.id = @post.id
-    @comment.save
 
+    @user = User.find_by_id(params[:user_id])
+    @post = Post.find_by_id(params[:post_id])
+    @comment = @post.comments.create(comment_params)
+    @comment.user_id = @user.id
+    @comment.post_id = @post.id
+    @comment.save
+    redirect_to @user
   end
 
 def show
-  @comment = @user.comments.create(comment_params)
+    @comment = Comment.find_by_id(params[:comment_id])
 end
-
-
-
-
 
 
 private

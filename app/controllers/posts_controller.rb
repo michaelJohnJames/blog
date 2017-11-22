@@ -1,8 +1,17 @@
 class PostsController < ApplicationController
-before_action :get_user
+before_action :get_user, :current_user, :authenticate
+
+def index
+  @posts = Post.all
+end
 
 def new
-  @post = Post.new
+  @comment = Comment.new(post_id: params[:post_id])
+end
+
+def show
+  @post = Post.find_by_id(params[:post_id])
+
 end
 
 def create

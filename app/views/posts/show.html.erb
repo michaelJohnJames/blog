@@ -1,0 +1,12 @@
+<h1>Posts here</h1>
+
+<%= form_with(model: @comment, local: true) do |f| %>
+<br>
+  <%= f.label :comment %><br>
+  <%= f.text_field :body%> <br>
+
+  <%= f.submit %><br>
+  <% end %>
+
+
+<%= link_to 'Back to Profile', '/' %>

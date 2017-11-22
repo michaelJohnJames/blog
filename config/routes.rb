@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :users
-  get '/signup', to: 'users#new'
+ get '/signup', to: 'users#new'
+
   root to: 'users#show'
+
+
 
 
   #resources :users
@@ -14,9 +17,18 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#logout'
 
 
+
   resources :posts
   post '/users/:id', to: 'posts#create'
   post '/', to: 'posts#create'
+  post '/posts/:post_id', to: 'users#show'
+  get '/:id', to: 'users#show'
+
+
+  resources :comments
+  get '/comments/:post_id', to: 'comments#show'
+  post '/comments/:post_id', to: 'users#show'
+
 
 
 

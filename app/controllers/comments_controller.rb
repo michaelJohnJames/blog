@@ -4,9 +4,12 @@ class CommentsController < ApplicationController
 
 
   def create
-    @comment = @user.comments.create(comment_params)
-    #@comment.user_id = current_user_id
+    @post = @user.posts.find_by_id(:post_id)
+    @comment = @user.posts.comments.create(comment_params)
+    @comment.user_id = current_user_id
+    @comment.posts.id = @post.id
     @comment.save
+
   end
 
 def show

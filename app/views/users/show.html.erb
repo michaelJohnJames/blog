@@ -36,7 +36,7 @@
     <%= f.hidden_field :comment_id %>
     <%= f.hidden_field :post_id %>
 
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
     <%= f.submit :Comment %>
     <% end %>
   <hr>
@@ -64,4 +64,3 @@
 
 
 <%= link_to 'Edit your account', edit_user_path(@user) %>
-<%= link_to 'Delete account', @user, method: 'delete', data: { confirm: 'Are you sure you want to delete your account?' }, local: true  %>

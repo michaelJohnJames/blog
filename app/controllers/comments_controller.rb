@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
   before_action :get_post, :authenticate, :current_user
 
-def index
-  @comments = Comment.all
-end
+  def index
+    @comments = @user.comments
+  end
 
   def create
 

@@ -17,9 +17,9 @@ nav {
 }
 
 
-#logout, #signin, #signup {
+#logout, #signin, #signup, #edit {
   text-decoration: none;
-  width: 75px;
+  width: 150px;
   height: 30px;
   display: inline-block;
   color: white;
@@ -29,7 +29,7 @@ nav {
   font-family: sans-serif;
 }
 
-#logout:hover, #signin:hover, #signup:hover {
+#logout:hover, #signin:hover, #signup:hover, #edit:hover {
   background-color: #74828F;
   color: white;
 }

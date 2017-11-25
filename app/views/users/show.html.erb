@@ -1,7 +1,12 @@
+<br>
+<br>
+<div class="wrapper">
+<div class="one">
 <h1> <%= @user.username %>'s Profile </h1>
 <%= @user.description %> <br>
 <%= @user.location %>
-
+</div>
+<div class="two">
 <% if @user == current_user %>
 <h2> Make a new post</h2>
 
@@ -19,12 +24,14 @@
   <% end %>
   <% end %>
 <br>
-<hr>
+</div>
 <hr>
 
 
+<div class="three">
 <h3>Most recent posts:</h3>
-
+</div>
+<div class="four">
   <% @user.posts.reverse.each do |post| %>
   <%= post.title %><br>
   <%= post.body %><br>
@@ -43,9 +50,7 @@
     <hr>
     <% end %>
     <% end %>
-  <hr>
+
   <% end %>
-
-
-
-<%= link_to 'Edit your account', edit_user_path(@user) %>
+  </div>
+  </div>

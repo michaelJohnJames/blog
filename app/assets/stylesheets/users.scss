@@ -1,3 +1,72 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-column-gap: 50px;
+  grid-template-rows: 450px 20px 100px 100px 100px;
+}
+
+.one {
+background-color: white;
+grid-column: 1;
+grid-row: 1/5;
+margin-top: 10px;
+margin-left: 10px;
+padding: 10px;
+font-size: 20px;
+}
+
+.two {
+background-color: #eaecef;
+grid-column: 2;
+grid-row: 1;
+font-size: 30px;
+margin-top: 10px;
+margin-right: 10px;
+padding-left: 30px;
+border: .5px dashed black;
+border-radius: 2%;
+}
+
+.three {
+//background-color: green;
+grid-column: 2;
+grid-row: 2;
+}
+
+.four {
+//background-color: blue;
+grid-column: 2;
+grid-row: 3/6;
+}
+
+.two input[type=text] {
+  width: 750px;
+  height: 50px;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background-color: #fefdfb;
+}
+
+.two textarea {
+  width: 1075px;
+  height: 90px;
+  font-size: 20px;
+  overflow: scroll;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background-color: #fefdfb;
+}
+
+.two h2 {
+  font-size: 40px;
+  }
+
+.two input[type=submit] {
+  height: 505px;
+  width: 150px;
+}

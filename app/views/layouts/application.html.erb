@@ -9,14 +9,15 @@
   </head>
 
   <body>
-    <p id="notice"> <%= notice %> </p>
+
     <nav>
-      <%= link_to 'Log out', '/logout', { method: 'post', local:true } if logged_in? %>
+      <%= link_to 'Log out', '/logout', { method: 'post', local: true, id:'logout' } if logged_in? %> 
       <% if !logged_in? %>
-      <%= link_to 'Sign up', '/signup' %>
-      <%= link_to 'Sign in', '/signin' %>
+      <%= link_to 'Sign up', '/signup', { id: 'signup' } %>
+      <%= link_to 'Sign in', '/signin', { id: 'signin' } %>
       <% end %>
     </nav>
+    <p id="notice"> <%= notice %> </p>
     <%= yield %>
   </body>
 </html>

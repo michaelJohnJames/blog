@@ -4,7 +4,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-column-gap: 50px;
   grid-template-rows: 450px 75px 100px 100px 100px;
 }
@@ -12,11 +12,13 @@
 .one {
 background-color: white;
 grid-column: 1;
-grid-row: 1/5;
+grid-row: 1/2;
 margin-top: 10px;
-margin-left: 10px;
+margin-left: 15px;
 padding: 10px;
 font-size: 20px;
+border: 0.2px solid black;
+border-radius: 10%;
 }
 
 .two {
@@ -28,7 +30,7 @@ margin-top: 10px;
 margin-right: 10px;
 padding-left: 30px;
 border: .5px dashed black;
-border-radius: 2%;
+border-radius: 1%;
 }
 
 .three {
@@ -42,9 +44,12 @@ padding: 2px;
 .four {
 background-color: white;
 grid-column: 2;
-grid-row: 3/6;
-margin-top: 20px;
-padding: 20px;
+grid-row: 3/10;
+margin-top: 10px;
+margin-right: 10px;
+padding: 30px;
+font-size: 20px;
+border-radius: 2%;
 }
 
 .two input[type=text] {
@@ -73,4 +78,22 @@ padding: 20px;
 .two input[type=submit] {
   height: 505px;
   width: 150px;
+}
+
+#post-title {
+  font-size: 25px;
+}
+
+#post-body {
+  font-size: 25px;
+}
+
+#comment-body {
+  margin-left: 30px;
+}
+
+.four textarea {
+  width: 300px;
+  height: 50px;
+  overflow: scroll;
 }

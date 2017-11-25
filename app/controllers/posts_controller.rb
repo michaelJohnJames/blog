@@ -15,11 +15,17 @@ def show
 end
 
 def create
-    
+
       @user = User.find_by_id(params[:user_id])
       @post = @user.posts.create(post_params)
       redirect_to @user
     end
+
+def destroy
+@post = Post.find_by_id(params [:post_id])
+@post.destroy
+redirect_to @user
+end
 
 private
 def post_params

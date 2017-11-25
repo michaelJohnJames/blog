@@ -2,8 +2,9 @@
 <br>
 <div class="wrapper">
 <div class="one">
-<h1> <%= @user.username %>'s Profile </h1>
-<%= @user.description %> <br>
+<img src="https://www.worldcrunch.com/assets/img/avatars/thumbnails/default-user-img-profile.jpg" alt="profile-pic" height="200" width="200">
+<h1> <%= @user.username %></h1>
+<%= @user.description %><br>
 <%= @user.location %>
 </div>
 <div class="two">
@@ -25,7 +26,7 @@
   <% end %>
 <br>
 </div>
-<hr>
+
 
 
 <div class="three">
@@ -33,10 +34,13 @@
 </div>
 <div class="four">
   <% @user.posts.reverse.each do |post| %>
-  <%= post.title %><br>
-  <%= post.body %><br>
-  Post by <%= link_to "#{@user.username}", "/#{@user.id}" %>
+  <b id="post-title"> <%= post.title %></b><br>
+  <p id="post-body"><%= post.body %></p><br>
+  <%= link_to 'Delete', @user %>
+  <p id="post-author"> Post by <%= link_to "#{@user.username}", "/#{@user.id}" %></p>
+
 <br>
+
   <%= form_with(model: Comment.new, local: true) do |f| %>
     <%= hidden_field_tag :user_id, @user.id %>
     <%= hidden_field_tag :post_id, post.id %>
@@ -45,12 +49,14 @@
     <hr>
     <% post.comments.reverse.each do |comment| %> <br>
         Comment by <%= link_to "#{@user.username}", "/#{@user.id}" %>: <br>
-    <%= comment.body %><br>
+    <p id="comment-body"><%= comment.body %></p><br>
     <hr>
     <hr>
     <% end %>
-    <% end %>
+      <% end %>
+
     <% end %>
 
-  </div>
+</div>
+
   </div>

@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-column-gap: 50px;
-  grid-template-rows: 450px 20px 100px 100px 100px;
+  grid-template-rows: 450px 75px 100px 100px 100px;
 }
 
 .one {
@@ -35,12 +35,16 @@ border-radius: 2%;
 //background-color: green;
 grid-column: 2;
 grid-row: 2;
+font-size: 25px;
+padding: 2px;
 }
 
 .four {
-//background-color: blue;
+background-color: white;
 grid-column: 2;
 grid-row: 3/6;
+margin-top: 20px;
+padding: 20px;
 }
 
 .two input[type=text] {

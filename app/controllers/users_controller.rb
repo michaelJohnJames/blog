@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:show]
+  before_action :authenticate, :current_user, only: [:show]
 
   def index
     @users = User.all
     @user = User.find_by_id([:id])
+    @posts = Post.all
   end
 
   def show
     @user = User.find_by_id(session[:user_id])
+    @post = Post.find_by_id(params[:post_id])
   end
 
   def new

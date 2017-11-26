@@ -104,3 +104,24 @@ grid-row: 1/99;
   height: 50px;
   overflow: scroll;
 }
+
+.edit-form {
+  margin: 0 auto;
+  background-color: #525564;
+  text-align: center;
+  width: 400px;
+  font-size: 30px;
+  color: white;
+  padding: 10px;
+  }
+
+.edit-form input[type=text] {
+  width: 250px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.edit-form input[type=password] {
+  width: 250px;
+  height: 50px;
+}

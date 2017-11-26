@@ -125,3 +125,35 @@ grid-row: 1/99;
   width: 250px;
   height: 50px;
 }
+
+.edit-form input[type=submit] {
+  background-color: white;
+  color: black;
+  margin: 20px;
+  width: 120px;
+  height: 50px;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 15%;
+  cursor: pointer;
+}
+
+#delete-button {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  margin: 20px;
+  width: 120px;
+  height: 50px;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 15%;
+
+}
+
+#delete-button:hover, .edit-form input[type=submit]:hover {
+  background-color: #C25B56;
+  color: white;
+}

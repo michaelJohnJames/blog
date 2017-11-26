@@ -36,8 +36,8 @@
 
   <p class='edit-form'>
     <%= f.submit %>
+
+<%= link_to 'Delete account', @user, method: 'delete', data: { confirm: 'Are you sure you want to delete your account?'}, id: 'delete-button', local: true  %>
   </p>
+
 <% end %>
-
-
-<%= link_to 'Delete account', @user, method: 'delete', data: { confirm: 'Are you sure you want to delete your account?' }, local: true  %>

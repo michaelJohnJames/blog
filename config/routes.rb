@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :sessions
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'users#show'
-  post '/users/id/edit', to: 'users#show'
+  post '/users/:id/edit', to: 'users#show'
   post '/logout', to: 'sessions#logout'
 
 

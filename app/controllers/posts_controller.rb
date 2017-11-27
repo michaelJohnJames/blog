@@ -11,6 +11,7 @@ end
 
 def show
   @post = Post.find_by_id(params[:post_id])
+  post = current_user
 
 end
 

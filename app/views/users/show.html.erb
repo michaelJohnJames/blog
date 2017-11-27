@@ -29,17 +29,15 @@
 </div>
 
 
-
 <div class="three">
 <h3>Most recent posts:</h3>
 </div>
 <div class="four">
-  <% @user.posts.reverse.each do |post| %>
+  <% Post.all.reverse.each do |post| %>
   <b id="post-title"> <%= post.title %></b><br>
   <p id="post-body"><%= post.body %></p><br>
+  <p id="post-author"> Post by <%= link_to "#{post.user.username}", "/users/#{post.user_id}" %></p>
   <%= link_to 'Delete', @user %>
-  <p id="post-author"> Post by <%= link_to "#{@user.username}", "/#{@user.id}" %></p>
-
 <br>
 
   <%= form_with(model: Comment.new, local: true) do |f| %>
@@ -57,7 +55,54 @@
       <% end %>
 
     <% end %>
-</div>
-</div>
 
-  
+
+
+
+    <% if @user != current_user do %>
+    <br>
+    <br>
+    <div class="wrapper">
+
+    <div class="one">
+    <img src="https://www.worldcrunch.com/assets/img/avatars/thumbnails/default-user-img-profile.jpg" alt="profile-pic" height="200" width="200">
+    <h1> <%= @user.username %></h1>
+    <%= @user.description %><br>
+    <%= @user.location %>
+    </div>
+
+
+
+
+    <div class="three">
+    <h3>Most recent posts:</h3>
+    </div>
+    <div class="four">
+      <% Posts.all.reverse.each do |post| %>
+      <b id="post-title"> <%= post.title %></b><br>
+      <p id="post-body"><%= post.body %></p><br>
+      <p id="post-author"> Post by <%= link_to "#{user.username}", "/#{@user.id}" %></p>
+      <%= link_to 'Delete', @user %>
+    <br>
+
+      <%= form_with(model: Comment.new, local: true) do |f| %>
+        <%= hidden_field_tag :user_id, @user.id %>
+        <%= hidden_field_tag :post_id, post.id %>
+        <%= f.text_area :body %>
+        <%= f.submit :Comment %>
+        <hr>
+        <% post.comments.reverse.each do |comment| %> <br>
+            Comment by <%= link_to "#{user.username}", "/#{@user.id}" %>: <br>
+        <p id="comment-body"><%= comment.body %></p><br>
+        <hr>
+        <hr>
+        <% end %>
+          <% end %>
+
+        <% end %>
+        <% end %>
+        <% end %>
+
+
+</div>
+</div>

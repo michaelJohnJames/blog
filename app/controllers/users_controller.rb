@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(session[:user_id])
+    user = @user
     @post = Post.find_by_id(params[:post_id])
   end
 

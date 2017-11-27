@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic blog app that is designed to give the user the ability to post and comment on posts from other users.
 
-Things you may want to cover:
+This app uses Ruby version 2.4.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+In order to update a user's account information, a password is required on the edit page.

@@ -35,9 +35,9 @@
 <div class="four">
   <% Post.all.reverse.each do |post| %>
   <b id="post-title"> <%= post.title %></b><br>
-  <p id="post-body"><%= post.body %></p><br>
-  <p id="post-author"> Post by <%= link_to "#{post.user.username}", "/users/#{post.user_id}" %></p>
-  <%= link_to 'Delete', @user %>
+  <p id="post-body"><%= post.body %></p>
+  <p id="post-author"> Post by <%= "#{post.user.username}" %></p>
+
 <br>
 
   <%= form_with(model: Comment.new, local: true) do |f| %>
@@ -47,8 +47,8 @@
     <%= f.submit :Comment %>
     <hr>
     <% post.comments.reverse.each do |comment| %> <br>
-        Comment by <%= link_to "#{@user.username}", "/#{@user.id}" %>: <br>
-    <p id="comment-body"><%= comment.body %></p><br>
+        Comment by <%= "#{comment.user.username}" %>: <br>
+    <p id="comment-body"><%= comment.body %></p>
     <hr>
     <hr>
     <% end %>

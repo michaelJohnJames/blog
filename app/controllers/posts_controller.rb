@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-before_action :get_user, :current_user, :authenticate
+before_action :get_user, :authenticate, :current_user
 
 def index
   @posts = Post.all
@@ -35,6 +35,10 @@ end
 
 def get_user
   @user = User.find_by_id(params[:id])
+end
+
+def current_user
+  @current_user ||= User.find_by_id(session[:user_id])
 end
 
 end

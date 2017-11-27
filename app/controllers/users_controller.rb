@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate, :current_user, only: [:show]
+  before_action :authenticate, :current_user, only: [:update, :edit]
 
   def index
     @users = User.all
@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
+    #params.permit(:username, :password, :location, :f_name, :l_name, :description)
+
   end
 
   def create
@@ -33,11 +35,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by_id(params[:id])
+    #@user = User.find_by_id(params[:id])
+    @user = current_user
+    @user.save(user_params)
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to @user
     else
-      render :edit
+      render :edit, notice: "Please enter your password!"
     end
   end
 
